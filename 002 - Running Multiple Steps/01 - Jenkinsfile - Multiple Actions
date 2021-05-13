@@ -5,5 +5,16 @@ pipeline {
 		}
 	}
     stages {
+    	stage('primeiro'){
+		steps{
+			createFile('date')
+			sh "sleep 10"
+			createFile('date2')
+		}
+	}
     }
+}
+
+def createFile(filename = '') {
+	sh "date > $filename && cat $filename"
 }
