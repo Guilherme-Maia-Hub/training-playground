@@ -1,15 +1,19 @@
 pipeline {
-    agent { 
+    	agent { 
 		docker { 
 			image 'alpine:latest' 
 		}
 	}
-    stages {
-        stage('build') {
-            steps {
-                echo "$NAME"
-                echo "$AGE"
-            }
-        }
-    }
+	parameters { 
+		string(name: 'NAME', defaultValue: 'Mr Jenkins', description: 'Type your username:')
+		string(name: 'AGE', defaultValue: '26', description: 'Type your age:')
+	}
+    	stages {
+        	stage('build') {
+            		steps {
+                		echo "$NAME"
+                		echo "$AGE"
+            		}
+        	}
+    	}
 }
