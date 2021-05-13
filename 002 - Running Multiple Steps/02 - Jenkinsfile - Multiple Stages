@@ -12,7 +12,7 @@ pipeline {
 	}
     	stage('test'){
 		steps{
-			sh "grep 2019 date.txt"
+			sh "grep 2021 date.txt"
 		}
 	}	
     }
@@ -20,8 +20,4 @@ pipeline {
 
 def createFile(filename = '') {
 	sh "date > $filename && cat $filename"
-}
-
-def checkDate(filename = '',year = '2019') {
-	sh "cat $filename"
 }
