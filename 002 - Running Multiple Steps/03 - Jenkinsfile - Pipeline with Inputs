@@ -5,8 +5,8 @@ pipeline {
 		}
 	}
 	parameters { 
-		string(name: 'NAME', defaultValue: 'Mr Jenkins', description: 'Type your username:')
-		string(name: 'AGE', defaultValue: '26', description: 'Type your age:')
+		string(name: 'NAME', defaultValue: 'Mr Jenkins')
+		string(name: 'AGE', defaultValue: '26')
 	}
     	stages {
         	stage('build') {
