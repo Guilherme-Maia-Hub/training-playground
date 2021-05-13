@@ -13,7 +13,7 @@ pipeline {
 			environment name: 'CHOICE', value: 'Build'
 		}
 		steps{
-			sh "echo $CHOICE"
+			sh "echo Build"
 		}
 	}
     	stage('test'){
@@ -21,7 +21,7 @@ pipeline {
 			environment name: 'CHOICE', value: 'Build'
 		}
 		steps{
-			sh "echo $CHOICE"
+			sh "echo Test"
 		}
 	}	
     	}
