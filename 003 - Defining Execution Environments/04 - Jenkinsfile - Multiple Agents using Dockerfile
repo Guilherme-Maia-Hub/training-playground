@@ -1,6 +1,31 @@
 pipeline {
-    agent { 
-	}
+    agent none
     stages {
+    
+    	stage('maven'){
+		agent{
+		    dockerfile {
+			filename 'dockerfilemaven'
+			dir '003 - Defining Execution Environments'
+			label 'dockerfilemavenImage'
+		    }
+		}		
+		steps{
+			sh "maven --version"
+		}
+	}
+    	stage('npm'){
+		agent{
+		    dockerfile {
+			filename 'dockerfilenode'
+			dir '003 - Defining Execution Environments'
+			label 'dockerfilenodeImage'
+		    }
+		}
+		steps{
+			sh "maven --version"
+		}
+	}	    	
+    
     }
 }
