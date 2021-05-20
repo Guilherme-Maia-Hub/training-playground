@@ -4,9 +4,11 @@ pipeline {
     
     	stage('maven'){
 		agent{
-			docker{
-				image 'maven:latest'
-			}
+		    dockerfile {
+			filename 'dockerfilemaven'
+			dir '003 - Defining Execution Environments'
+			label 'dockerfilemavenImage'
+		    }
 		}		
 		steps{
 			sh "maven --version"
@@ -14,9 +16,11 @@ pipeline {
 	}
     	stage('npm'){
 		agent{
-			docker{
-				image 'node:latest'
-			}
+		    dockerfile {
+			filename 'dockerfilenode'
+			dir '003 - Defining Execution Environments'
+			label 'dockerfilenodeImage'
+		    }
 		}
 		steps{
 			sh "maven --version"
