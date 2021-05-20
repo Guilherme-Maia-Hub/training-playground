@@ -10,9 +10,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                
+                echo "$NOTIFICATION_EMAIL"
 		script {
-			echo "$NOTIFICATION_EMAIL"
+			echo env.NOTIFICATION_EMAIL
 		}
             }
         }
