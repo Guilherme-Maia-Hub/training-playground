@@ -24,7 +24,7 @@ pipeline {
 			-Dpackaging=jar												\
 			-DgroupId='org.celfocus.com'										\
 			-DartifactId='MyApp'											\
-			-Dversion=1.0
+			-Dversion=1.0"
             }
         }
     }
